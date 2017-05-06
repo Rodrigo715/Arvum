@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity
     ImageView vacio;
     Boolean sesion=false;
     TextView nombre_main;
+    String nombre="";
 
 
     SharedPreferences preferences;
@@ -54,12 +55,16 @@ public class MainActivity extends AppCompatActivity
         editor=preferences.edit();
 
         nombre_main= (TextView) findViewById(R.id.nombre_main);
+        nombre_main.setText(preferences.getString("nombre-persis", "DefaultValue222"));
+
+
 
         //sesion=preferences.getBoolean("state", false);
 
-        if(!sesion){
+        if(sesion!=true){
             Intent intent=new Intent(getApplicationContext(), Registro.class);
             startActivityForResult(intent, REQUEST_SESION);
+            sesion=true;
         }
 
 
@@ -128,11 +133,19 @@ public class MainActivity extends AppCompatActivity
 
                 }
             }
+
             case (REQUEST_SESION):{
                 if(resultCode==RESULT_OK){
                     editor.putBoolean("state", data.getBooleanExtra("sesion", false));
                     sesion=preferences.getBoolean("state", false);
-                    nombre_main.setText(data.getStringExtra("nombre").toString());
+
+                    editor.putString("nombre-persis", data.getStringExtra("nombre"));
+                    //nombre=data.getStringExtra("nombre");
+
+                    nombre_main.setText(data.getStringExtra("nombre"));
+                    //nombre_main.setText(preferences.getString("nombre-persis", "DefaultValue"));
+                    //nombre_main.setText(data.getStringExtra("nombre"));
+                    //nombre_main.setText(preferences.getString("nombre","DefaultValue"));
                 }
             }
         }
