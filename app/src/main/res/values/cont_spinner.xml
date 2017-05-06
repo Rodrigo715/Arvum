@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="planets_array">
+        <item>Semilla</item>
+        <item>Plántula</item>
+        <item>Planta joven</item>
+    </string-array>
+</resources>

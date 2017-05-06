@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hackunam.arvum.AgregarPlanta">
+
+    <ImageView
+        android:id="@+id/iv_perfil_agregar"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/foto"/>
+
+    <TextView
+        android:id="@+id/msj_agregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_perfil_agregar"
+        android:layout_centerHorizontal="true"
+        android:text="¡Planta nueva!"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo: "
+        android:layout_toLeftOf="@+id/spinner_tipo"
+        android:layout_below="@id/msj_agregar"/>
+
+    <Spinner
+        android:id="@+id/spinner_tipo"
+        android:layout_below="@+id/msj_agregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp">
+    </Spinner>
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/comoLlamas"
+        android:layout_below="@id/spinner_tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:hint="¿Cómo le llamas?"/>
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/especie"
+        android:layout_below="@id/comoLlamas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:hint="Especie"/>
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/bitacora"
+        android:layout_below="@id/especie"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:hint="Bitacora"/>
+
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/btn_agregarPlanta"
+        android:layout_below="@+id/bitacora"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="agregar"/>
+
+
+</RelativeLayout>
